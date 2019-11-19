@@ -1,15 +1,17 @@
 import React from 'react';
+import { Route, Switch } from 'react-router-dom';
 import './App.css';
-import Landing from './Components/Landing';
-import Header from './Components/Header';
-import Footer from './Components/Footer';
+
+import Landing from './Scenes/Landing';
+import NotFound from './Scenes/NotFound';
 
 function App() {
   return (
     <div>
-      <Header></Header>
-      <Landing></Landing>
-      <Footer></Footer>
+      <Switch>
+        <Route path='/' component={Landing}></Route>
+        <Route component={NotFound}></Route>
+      </Switch>
     </div>
   );
 }
