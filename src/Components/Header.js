@@ -49,8 +49,7 @@ export default function Header() {
         </LogoWrap>
         <LinksWrap>
           <NavLinks to='/'>Community</NavLinks>
-          <NavLinks to='/'>Faq</NavLinks>
-          <NavLinks to='/'>Blog</NavLinks>
+          <NavLinks to='/'>FAQ</NavLinks>
           <NavLinks to='/'>Contact</NavLinks>
           <NavLinks to='/'>Get Early Access</NavLinks>
         </LinksWrap>

@@ -14,9 +14,9 @@ const LandingWrapper = styled.div`
 
 const StyledBody = styled.div`
   display: grid;
-  grid-template-rows: auto auto 1fr;
+  grid-template-rows: auto auto 1fr auto;
   justify-content: center;
-  margin: 90px;
+  margin: 70px;
 `;
 
 const StyledTitle = styled.div`
@@ -50,7 +50,7 @@ const FigmaWrapper = styled.div`
 
 const FigmaTitle = styled.div`
   font-size: 45px;
-  color: black;
+  color: var(--dark-color);
   margin: auto;
   display: flex;
 `;
@@ -61,7 +61,13 @@ const Figma = styled.iframe`
   border: none;
 `;
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input`
+  display: flex;
+  height: 50px;
+  margin-top: 30px;
+  background: red;
+  border: none;
+`;
 
 export default function Landing() {
   return (
@@ -75,7 +81,7 @@ export default function Landing() {
           </StyledSubTitle>
 
           <StyledVideo src='https://www.youtube.com/embed/tgbNymZ7vqY'></StyledVideo>
-          <StyledInput></StyledInput>
+          {/* <StyledInput></StyledInput> */}
         </StyledBody>
       </LandingWrapper>
       <FigmaWrapper>
