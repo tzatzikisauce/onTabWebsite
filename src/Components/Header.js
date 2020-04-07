@@ -3,19 +3,22 @@ import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 
 const NavWrap = styled.div`
-  margin: 0 30px 0 30px;
+  margin: 0 15rem 0 15rem;
+  color: var(--dark-color);
 `;
 
 const StyledNav = styled.div`
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   height: 70px;
-  font-weight: 450;
+  font-size: 1.2rem;
+  font-weight: 550;
 `;
 
 const LogoWrap = styled.div`
   display: flex;
   justify-content: flex-start;
+  font-size: 1.2rem;
 `;
 
 const LinksWrap = styled.div`
@@ -37,7 +40,7 @@ const NavLinks = styled(Link)`
 const StyledLine = styled.hr`
   height: 10px;
   border: 0;
-  border-top: 1px solid #f4f4f4;
+  border-top: 1px solid #343a40;
 `;
 
 export default function Header() {
@@ -49,9 +52,8 @@ export default function Header() {
         </LogoWrap>
         <LinksWrap>
           <NavLinks to='/'>Community</NavLinks>
-          <NavLinks to='/'>FAQ</NavLinks>
+          <NavLinks to='/Survey'>FAQ</NavLinks>
           <NavLinks to='/'>Contact</NavLinks>
-          <NavLinks to='/'>Get Early Access</NavLinks>
         </LinksWrap>
       </StyledNav>
       <StyledLine></StyledLine>

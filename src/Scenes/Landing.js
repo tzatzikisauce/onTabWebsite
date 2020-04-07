@@ -1,73 +1,109 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
+
 import Header from '../Components/Header';
 import Footer from '../Components/Footer';
-
+import { Button } from '../Components/Button';
 import mainBcg from '../Images/assorted-wine-bottles-1283219.jpg';
+import screen1 from './../Images/OnTabPitch1.png';
+import screen2 from './../Images/OnTabPitch2.png';
+import screen3 from './../Images/OnTabPitch3.png';
 
 const LandingWrapper = styled.div`
-  min-height: 100vh;
-  background: linear-gradient(rgb(67, 198, 172, 0.9), rgb(248, 255, 174, 0.9)),
+  background: linear-gradient(
+      to right,
+      rgb(198, 255, 221, 0.9),
+      rgb(251, 215, 134, 0.9),
+      rgb(247, 121, 125, 0.9)
+    ),
     url(${mainBcg}) no-repeat fixed;
   background-size: cover;
+  color: var(--dark-color);
+  height: 95vh;
 `;
 
 const StyledBody = styled.div`
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
+  height: 100vh;
+  display: flex;
   justify-content: center;
-  margin: 70px;
+  align-items: center;
+  flex-direction: column;
+  margin: -5rem 15rem 0 15rem;
 `;
 
 const StyledTitle = styled.div`
-  display: flex;
-  margin: auto;
-  font-size: 45px;
+  font-size: 4.5rem;
   letter-spacing: 2px;
 `;
 
 const StyledSubTitle = styled.div`
-  display: flex;
-  margin: auto;
-  font-size: 25px;
+  margin-top: 2rem;
+  font-size: 1.5rem;
 `;
 
-const StyledVideo = styled.iframe`
-  width: 750px;
-  height: 500px;
-  border: none;
-  margin: 20px 0 20px 0;
-  -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    5px 5px 15px -2px rgba(0, 0, 0, 0);
-  box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000,
-    5px 5px 15px -2px rgba(0, 0, 0, 0);
+const ButtonWrapper = styled.a`
+  margin-top: 10rem;
 `;
 
-const FigmaWrapper = styled.div`
-  min-height: 100vh;
+const ContactButton = styled(Button)``;
+
+const ScreenBlockWrapper = styled.div`
+  margin: 5rem 0rem 5rem 0rem;
+`;
+
+const BlockWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+`;
+
+const StyledScreen = styled.img`
+  width: 100%;
+`;
+
+const StyledTextWrapper = styled.div`
+  display: grid;
+  background-color: ${(props) => props.color};
+  margin: 0rem 5rem 0rem 5rem;
+`;
+
+const StyledBlockTitle = styled.div`
+  align-self: center;
+  justify-self: center;
+  font-size: 4.5rem;
+  letter-spacing: 2px;
+`;
+
+const StyledBlockText = styled.div`
+  justify-self: center;
+  font-size: 1.5rem;
+`;
+
+const SurveyBlockWrapper = styled.div`
+  display: grid;
+  height: 50vh;
+  background-color: var(--light-green);
+`;
+const SurveyText = styled.div`
+  justify-self: center;
+  align-self: center;
   display: grid;
 `;
 
-const FigmaTitle = styled.div`
-  font-size: 45px;
-  color: var(--dark-color);
-  margin: auto;
-  display: flex;
+const SurveyTitle = styled.div`
+  font-size: 4.5rem;
+  letter-spacing: 2px;
 `;
-
-const Figma = styled.iframe`
-  min-height: 70vh;
-  width: 100%;
-  border: none;
+const SurveySubTitle = styled.div`
+  font-size: 1.5rem;
+  justify-self: center;
 `;
-
-const StyledInput = styled.input`
-  display: flex;
-  height: 50px;
-  margin-top: 30px;
-  background: red;
-  border: none;
+const StyledLink = styled(Link)`
+  margin-top: 1rem;
+  justify-self: center;
+  align-self: center;
 `;
+const SurveyButton = styled(Button)``;
 
 export default function Landing() {
   return (
@@ -75,22 +111,64 @@ export default function Landing() {
       <LandingWrapper>
         <Header></Header>
         <StyledBody>
-          <StyledTitle>Introducing OnTab</StyledTitle>
+          <StyledTitle>Let's Modernize the Bar Industry</StyledTitle>
           <StyledSubTitle>
-            Revolutionize the way we spend our nights at the bar
+            OnTab is an application that makes ordering at bars easier for
+            everyone. Ordering a drink is as simple as swiping card.
           </StyledSubTitle>
-
-          <StyledVideo src='https://www.youtube.com/embed/tgbNymZ7vqY'></StyledVideo>
-          {/* <StyledInput></StyledInput> */}
+          <ButtonWrapper>
+            <a href='mailto:somone@example.com'>
+              <ContactButton>Contact us</ContactButton>
+            </a>
+          </ButtonWrapper>
         </StyledBody>
       </LandingWrapper>
-      <FigmaWrapper>
-        <FigmaTitle>Check out our interface!</FigmaTitle>
-        <Figma
-          src='https://www.figma.com/embed?embed_host=share&amp;url=https%3A%2F%2Fwww.figma.com%2Ffile%2FoubLSKr2olY2CWZXFrFTkR%2FOnTabBartender%3Fnode-id%3D0%253A1'
-          allowfullscreen
-        ></Figma>
-      </FigmaWrapper>
+      <ScreenBlockWrapper>
+        <BlockWrapper>
+          <StyledScreen src={screen1}></StyledScreen>
+          <StyledTextWrapper>
+            <StyledBlockTitle>Everything in one place</StyledBlockTitle>
+            <StyledBlockText>
+              Bartenders spend too much time waiting on old systems. We've
+              simplified the checkout process.
+            </StyledBlockText>
+          </StyledTextWrapper>
+        </BlockWrapper>
+        <BlockWrapper>
+          <StyledTextWrapper>
+            <StyledBlockTitle>Take control</StyledBlockTitle>
+            <StyledBlockText>
+              An intuitive interface to keep track of everyones open tabs.
+            </StyledBlockText>
+          </StyledTextWrapper>
+          <StyledScreen src={screen2}></StyledScreen>
+        </BlockWrapper>
+        <BlockWrapper>
+          <StyledScreen src={screen3}></StyledScreen>
+          <StyledTextWrapper>
+            <StyledBlockTitle>Never been easier</StyledBlockTitle>
+            <StyledBlockText>
+              Bartenders can now easily keep track of open tabs.
+            </StyledBlockText>
+          </StyledTextWrapper>
+        </BlockWrapper>
+      </ScreenBlockWrapper>
+      <SurveyBlockWrapper>
+        <SurveyText>
+          <SurveyTitle>Help us improve our application</SurveyTitle>
+          <SurveySubTitle>Take our brief survey</SurveySubTitle>
+          <StyledLink to='/Survey#top'>
+            <SurveyButton
+              color={'var(--primary-color)'}
+              fontColor={'var(--light-green)'}
+              hoverBack={'var(--primary-color)'}
+              hoverColor={'var(--light-green)'}
+            >
+              Survey
+            </SurveyButton>
+          </StyledLink>
+        </SurveyText>
+      </SurveyBlockWrapper>
       <Footer></Footer>
     </div>
   );
